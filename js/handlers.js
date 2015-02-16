@@ -39,10 +39,6 @@ $(function(){
 							tableData.append('<td><button class="delete glyphicon glyphicon-trash btn btn-xs"></button></td>');
 
 
-							//when edit is clicked
-							//find data using
-							// $(this).parents("tr").data("page");
-							//console.log(tableData.data("page"));
 						$(".content-list table").append(tableData);
 					}
 					
