@@ -72,19 +72,22 @@ class ContentQueries extends PDOHelper {
 	}
 
 	public function addMenuLink($menu_datas) {
-				
-		$menu_link[":menu_link_menu"] = "my-menu-machine-name";
+	
+		//$menu_link[":menu_link_menu"] = "my-menu-machine-name";
+
+		$menu_datas [":menu_link_plid"] = $menu_datas[":menu_link_plid"] ? $ menu_datas[":menu_link_plid"] : null;
+
 		$sql = "INSERT INTO menu_links (title, path, menu, plid, weight) VALUES (:menu_link_title, :menu_link_path, :menu_link_menu, :menu_link_plid, :menu_link_weight)";
 
-		 $menu_data = array(
-		 	":menu_link_title" => $menu_datas,
-		 	":menu_link_path" => $url_path,
-			":menu_link_menu" => $menu_link,
-			":menu_link_plid" => $menu_datas,
-			":menu_link_weight" => $menu_datas
+		 //$menu_data = array(
+		 	//":menu_link_title" => $menu_datas,
+		 	//":menu_link_path" => $url_path,
+			//":menu_link_menu" => $menu_link,
+			//":menu_link_plid" => $menu_datas,
+			//":menu_link_weight" => $menu_datas
 
 			
-		 	);
+		 	//);
 
 		return $this->query($sql, $menu_datas);
 

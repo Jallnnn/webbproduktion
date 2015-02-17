@@ -5,7 +5,7 @@ function createAdminSelect (data) {
 	var selectInHtml = $("<select class='form-control'></select>");
 
 
-	var options = $("<option>Top</option>");
+	var options = $("<option value''>Top</option>");
 
 
 	options.data("menuData", {mlid: null, menu: "my-menu-machine-name"});
