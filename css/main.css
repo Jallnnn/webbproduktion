@@ -43,6 +43,7 @@ body {
 }
 .content-list {
     display: none;
+    text-decoration: none;
 }
 
 
@@ -55,30 +56,15 @@ body {
     font-size: 20px;
 }
 
-.plLearnMore {    
+.learnMore {    
     color: #fff;
     padding-top: 300px;
     font-size: 22px;
     font-family: "trebuchet ms", sans-serif; 
     z-index: 10;   
 }
-.ligue1LearnMore {    
-    color: #fff;
-    padding-top: 300px;
-    font-size: 22px;
-    font-family: "trebuchet ms", sans-serif; 
-    z-index: 10;   
-}
-.laLigaLearnMore {    
-    color: #fff;
-    padding-top: 300px;
-    font-size: 22px;
-    font-family: "trebuchet ms", sans-serif; 
-    z-index: 10;   
-}
-.ligue1Title {
-    font-size: 40px;
-}
+ 
+
 .item:nth-child(1){
     text-align: center;
     height: 600px;
@@ -108,4 +94,6 @@ body {
   height: 100%;
 }
 
-
+li.home {
+  list-style: none;
+}
