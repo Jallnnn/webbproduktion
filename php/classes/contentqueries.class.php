@@ -75,7 +75,7 @@ class ContentQueries extends PDOHelper {
 	
 		//$menu_link[":menu_link_menu"] = "my-menu-machine-name";
 
-		$menu_datas [":menu_link_plid"] = $menu_datas[":menu_link_plid"] ? $ menu_datas[":menu_link_plid"] : null;
+		$menu_datas [":menu_link_plid"] = $menu_datas[":menu_link_plid"] ? $menu_datas[":menu_link_plid"] : null;
 
 		$sql = "INSERT INTO menu_links (title, path, menu, plid, weight) VALUES (:menu_link_title, :menu_link_path, :menu_link_menu, :menu_link_plid, :menu_link_weight)";
 
