@@ -5,7 +5,6 @@ function showPage(pageName) {
   //getImages(pageName);
 
   if (pageName != "sign-in" && pageName != "home") {
-    //getpage ajax
     $.ajax ({
       url: "php/get_page.php",
       dataType: "json",
@@ -19,7 +18,6 @@ function showPage(pageName) {
         $(".pageContent").html('');
         $(".pageContent").append("<article class='pageMaterial'/>");
         $(".pageContent").show();
-
         $(".pageMaterial").append('<div class="panel panel-default"><div class="panel-heading"><h1 class="panel-title">'+data[0]["title"]+'</h1></div>'+'<div class="panel panel-body"><p>'+data[0]["body"]+'</p></div>');
 
 

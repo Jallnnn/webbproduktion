@@ -115,7 +115,7 @@ $(function(){
 
   
 getTheFooter();
-
+//getImages();
 
 });
 
@@ -137,6 +137,22 @@ function getAllMenuLinks (activePath) {
   });
   return false;
 }
+
+// function getImages () {
+//   $.ajax({
+//     url: "php/get_images.php",
+//     dataType: "json",
+//     success: function(data) {
+//       console.log("getImages success: ", data);
+//       createImagesSelect(data);
+
+//     },
+//     error: function(data) {
+//       console.log("getImages error: ", data.responseText);
+//     }
+//   });
+//   return false;
+// }
 
 function getTheFooter () {
   $.ajax ({

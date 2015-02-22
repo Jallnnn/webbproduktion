@@ -28,12 +28,9 @@ class ContentQueries extends PDOHelper {
 				pages.img_id,
 				pages.user_id,
 				pages.created,
-				menu_links.* FROM pages, menu_links";
+				menu_links.* FROM pages, menu_links GROUP BY pages.pid";
 		return $this->query($sql);
 	}
-
-
-
 
 
 	public function getAllPagesByUrl($url_info) {
@@ -47,6 +44,8 @@ class ContentQueries extends PDOHelper {
 	 
 	  	return $result;
 	}
+
+
 
 	public function updatePage($update_data) {
 
@@ -103,6 +102,11 @@ class ContentQueries extends PDOHelper {
 		return $this->query($sql, $menu_datas);
 
 	}
+
+	public function getImages() {
+	  	$sql = "SELECT * FROM images";
+	  	return $this->query($sql);
+  }
 
 	public function getTheFooter() {
 		$sql = "SELECT * FROM footer";
