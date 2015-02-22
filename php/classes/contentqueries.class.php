@@ -20,7 +20,12 @@ class ContentQueries extends PDOHelper {
 	    return $this->query($sql);
 	  }
 
-	public function getAllPages($url_info) {
+	public function getAllPages() {
+	  	$sql = "SELECT * FROM pages";
+	  	return $this->query($sql);
+	  }
+
+	public function getPageByUrl($url_info) {
 		$sql = "SELECT pid from url_alias WHERE path = :path";
 	  	$url_paths = array(":path" => $url_info);
 	  	$url_path_info = $this->query($sql, $url_paths);
