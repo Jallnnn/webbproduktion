@@ -114,7 +114,7 @@ $(function(){
   }
 
   
-
+getTheFooter();
 
 
 });
@@ -133,6 +133,33 @@ function getAllMenuLinks (activePath) {
     },
     error: function(data) {
       console.log("getAllMenuLinks error: ", data.responseText);
+    }
+  });
+  return false;
+}
+
+function getTheFooter () {
+  $.ajax ({
+    url: "php/get_footer.php",
+    dataType: "json",
+    success: function(data) {
+      console.log("getTheFooter success: ", data);
+      for (var i = 0; i < data.length; i++) {
+        var footerData = $("<p class='footerContent'/>");
+
+        footerData.append("<p><strong>Contact info:</strong></p>");
+        footerData.append("<p><strong>Name:</strong> "+data[i].name+"</p>");
+        footerData.append("<p><strong>Email:</strong> "+data[i].email+"</p>");
+        footerData.append("<p><strong>Phone number:</strong> "+data[i].phone+"</p>");
+        footerData.append("<p><strong>Street:</strong> "+data[i].street+"</p>");
+        footerData.append("<p><strong>Postalcode:</strong> "+data[i].postalcode+"</p>");
+        footerData.append("<p><strong>City:</strong> "+data[i].city+"</p>");
+
+        $("footer .footerData").append(footerData);
+      }
+    },
+    error: function(data) {
+      console.log("getTheFooter error: ", data.responseText);
     }
   });
   return false;

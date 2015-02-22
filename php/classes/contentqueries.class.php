@@ -14,7 +14,7 @@ class ContentQueries extends PDOHelper {
 	  }
 
 	public function getMenuLinks() {
-	    // $menu_link = array(":menu_name" => $menu_link);
+	    
 	    $sql = "SELECT * FROM menu_links";
 	    
 	    return $this->query($sql);
@@ -51,7 +51,7 @@ class ContentQueries extends PDOHelper {
 
 		$sql = "INSERT INTO pages (title, body, user_id) VALUES (:title, :body, :user_id)";
 		
-		// save new page
+		
 		return $this->query($sql, $page_data);
 		$menu_data[":menu_link_path"] = $this->saveNewUrlAlias($url_path);
 		$this->addMenuLink($menu_data);
@@ -78,24 +78,19 @@ class ContentQueries extends PDOHelper {
 
 	public function addMenuLink($menu_datas) {
 	
-		//$menu_link[":menu_link_menu"] = "my-menu-machine-name";
 
 		$menu_datas [":menu_link_plid"] = $menu_datas[":menu_link_plid"] ? $menu_datas[":menu_link_plid"] : null;
 
 		$sql = "INSERT INTO menu_links (title, path, menu, plid, weight) VALUES (:menu_link_title, :menu_link_path, :menu_link_menu, :menu_link_plid, :menu_link_weight)";
 
-		 //$menu_data = array(
-		 	//":menu_link_title" => $menu_datas,
-		 	//":menu_link_path" => $url_path,
-			//":menu_link_menu" => $menu_link,
-			//":menu_link_plid" => $menu_datas,
-			//":menu_link_weight" => $menu_datas
-
-			
-		 	//);
 
 		return $this->query($sql, $menu_datas);
 
+	}
+
+	public function getTheFooter() {
+		$sql = "SELECT * FROM footer";
+		return $this->query($sql);
 	}
 
 }
