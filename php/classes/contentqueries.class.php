@@ -21,7 +21,14 @@ class ContentQueries extends PDOHelper {
 	  }
 
 	public function getAllPages() {
-		$sql = "SELECT * FROM pages JOIN menu_links";
+		$sql = "SELECT
+				pages.pid,
+				pages.title as pageTitle,
+				pages.body,
+				pages.img_id,
+				pages.user_id,
+				pages.created,
+				menu_links.* FROM pages, menu_links";
 		return $this->query($sql);
 	}
 
