@@ -28,7 +28,9 @@ class ContentQueries extends PDOHelper {
 				pages.img_id,
 				pages.user_id,
 				pages.created,
-				menu_links.* FROM pages, menu_links GROUP BY pages.pid";
+				menu_links.*
+				FROM pages, menu_links, url_alias
+				WHERE menu_links.path = url_alias.path && pages.pid = url_alias.pid";
 		return $this->query($sql);
 	}
 

@@ -18,9 +18,6 @@ $(function(){
 		$.ajax({
 			url: "php/getcontent.php",
 			dataType: "json",
-			//data: {
-			//	"get_pages" : 1
-			//},
 			success: function(data) {
 					console.log("getPages success: ", data);
 
